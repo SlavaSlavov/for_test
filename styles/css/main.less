@@ -1,0 +1,164 @@
+* {
+	box-sizing: border-box;
+}
+
+@import url(variables.less);
+@import url(mixins.less);
+@import url(fonts.less);
+
+// Pages
+body {
+	font-family: 'opensans-regular';
+	font-size: 14px;
+	color: @colorGrey;
+}
+@import url(header.less);
+@import url(main-content.less);
+@import url(footer.less);
+
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+    25% {
+        transform: rotate(60deg);
+    }
+    50% {
+        transform: rotate(120deg);
+    
+    }
+    75% {
+        ransform:  rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@-moz-document url-prefix() {
+    footer ul a {
+	        &:hover {
+	         color: white;
+	        }
+    }
+    .testimonials .icon {
+    	animation: rotate 5.5s linear infinite;
+    }
+    .contact a {
+		cursor: default;
+    }
+    .about {
+    	color: black;
+    }
+}
+@media all and (max-width: 900px) {
+	.column {
+		width: 100%;
+	}
+	header {
+		.nav-header {
+			padding: 25px 10px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.menu {
+			position: absolute;
+			top: 75px;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			
+			li {
+				display: block;
+				margin-right: 0 !important;
+				&:not(:last-child) {
+					margin-bottom: 10px;
+				}
+			}
+		}
+		.promo-text {
+			font-size: 50px;
+		}
+	}
+	.service {
+		padding: 25px 10px;
+		flex-direction: column;
+		article {
+			margin-bottom: 20px;
+			text-align: center;
+			.icon {
+				display: block;
+				margin: 0 auto 15px;
+			}
+		}
+	}
+	.about {
+		padding: 25px 10px;
+		.description {
+			padding: 25px 0;
+			p {
+				width: 100%;
+			}
+		}
+
+		.scroll-elements {
+			display: flex;
+			flex-direction: column;
+			padding: 25px 0 0;
+			.column {
+				width: 100%;
+				margin: 0 0 20px !important;
+				padding: 0 !important;
+				text-align: center;
+				h2 {
+					&:before,
+					&:after {
+						display: none !important;
+					}
+				}
+			}
+			.vertical-line {
+				display: none;
+				
+			}
+		}
+	}
+	.testimonials {
+		padding: 25px 10px;
+		h1 {
+			span {
+				display: block;
+				margin-top: 10px;
+			}
+		}
+		.section-body {
+			flex-direction: column;
+			.column {
+				&:not(:last-child) {
+					margin-bottom: 25px;
+				}
+			}
+		}
+	}
+	.contact {
+		padding: 25px 10px;
+		a,
+		p {
+			font-size: 20px;
+		}
+	}
+	footer {
+		padding: 25px 10px;
+		flex-direction: column;
+		.menu {
+			margin-top: 25px;
+			li {
+				font-size: 14px;
+				&:not(:last-child) {
+					margin-right: 20px;
+				}
+			}
+		}
+	}
+}
